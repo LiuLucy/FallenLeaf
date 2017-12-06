@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 58f6bc5e63e9747c289a3b3ca87c5730
+timeCreated: 1512458484
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Punishment
+  fontNames:
+  - Punishment
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
