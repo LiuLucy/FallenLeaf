@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+<<<<<<< HEAD
 public class accelerometer : MonoBehaviour {
+=======
+public class leafController : MonoBehaviour {
+>>>>>>> 1742bdda397753dc975c41d611dedcc38dde63fd
 	
 	bool leafshake;
 	Vector3 leaf;
@@ -58,7 +62,11 @@ public class accelerometer : MonoBehaviour {
 	}
 	
 	void AccelerometerMove(){	
+<<<<<<< HEAD
 		float x = Input.acceleration.x;
+=======
+		float x = Input.accelerometer.x;
+>>>>>>> 1742bdda397753dc975c41d611dedcc38dde63fd
 		if(x<-0.1f)
 		{
 			MoveLeft();
@@ -67,6 +75,13 @@ public class accelerometer : MonoBehaviour {
 		{
 			MoveRight();
 		}
+<<<<<<< HEAD
+=======
+		else
+		{
+			setVelocityZero();
+		}
+>>>>>>> 1742bdda397753dc975c41d611dedcc38dde63fd
 	}
 	
 	void MoveLeft(){
@@ -76,6 +91,11 @@ public class accelerometer : MonoBehaviour {
 	
 	void MoveRight(){
 		gameObject.transform.position += new Vector3(0.1f,0,0);
+<<<<<<< HEAD
 		transform.Rotate(0,0,15f);
     }
+=======
+		transform.Rotate(0,0,15f); 
+	}
+>>>>>>> 1742bdda397753dc975c41d611dedcc38dde63fd
 }
