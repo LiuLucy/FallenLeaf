@@ -67,10 +67,6 @@ public class accelerometer : MonoBehaviour {
 		{
 			MoveRight();
 		}
-		else
-		{
-			setVelocityZero();
-		}
 	}
 	
 	void MoveLeft(){
