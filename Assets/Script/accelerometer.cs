@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class leafController : MonoBehaviour {
+public class accelerometer : MonoBehaviour {
 	
 	bool leafshake;
 	Vector3 leaf;
@@ -58,7 +58,7 @@ public class leafController : MonoBehaviour {
 	}
 	
 	void AccelerometerMove(){	
-		float x = Input.accelerometer.x;
+		float x = Input.acceleration.x;
 		if(x<-0.1f)
 		{
 			MoveLeft();
@@ -66,10 +66,6 @@ public class leafController : MonoBehaviour {
 		else if(x>0.1f)
 		{
 			MoveRight();
-		}
-		else
-		{
-			setVelocityZero();
 		}
 	}
 	
@@ -80,6 +76,6 @@ public class leafController : MonoBehaviour {
 	
 	void MoveRight(){
 		gameObject.transform.position += new Vector3(0.1f,0,0);
-		transform.Rotate(0,0,15f); 
-	}
+		transform.Rotate(0,0,15f);
+    }
 }
