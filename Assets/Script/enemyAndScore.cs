@@ -73,7 +73,6 @@ public class enemyAndScore : MonoBehaviour {
                 transform.Rotate(0, 0, 180);
             else
                 transform.Rotate(0, 0, 0);
-            Debug.Log("movingUp 25");
             posY = 25f;
             Exclamation.transform.position = new Vector3(posX, 26f, 68.4f);
             gameObject.transform.position = new Vector3(posX, posY, 68.4f);
@@ -85,7 +84,6 @@ public class enemyAndScore : MonoBehaviour {
                 transform.Rotate(0, 0, -180);
             else
                 transform.Rotate(0, 0, 0);
-            Debug.Log("movingDown 36");
             posY = 36f;
             Exclamation.transform.position = new Vector3(posX, 35f, 68.4f);
             gameObject.transform.position = new Vector3(posX, posY, 68.4f);

@@ -18,8 +18,7 @@ public class LoadSceneOnClick : MonoBehaviour {
     }
     void Update()
     {
-
-        Debug.Log(leaf.transform.position.y);
+        
         if (buttonClicked)
         {
             Debug.Log(leaf.transform.position.y);

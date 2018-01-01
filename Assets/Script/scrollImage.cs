@@ -13,7 +13,7 @@ public class scrollImage : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		scrollSpeed -= Time.deltaTime*0.1;
+		scrollSpeed -= Time.deltaTime*0.1f;
 		float newPos = Mathf.Repeat(Time.time * scrollSpeed,50);
 		transform.position = startPos + Vector2.down * newPos;
 	}

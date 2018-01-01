@@ -29,7 +29,6 @@ public class AddCoin : MonoBehaviour
             score_Count += 1;
             score_Coin.text = score_Count.ToString();
             PlayerPrefs.SetInt("Record", score_Count);
-            Debug.Log(score_Count);
             Destroy(other.gameObject);
         }
     }
