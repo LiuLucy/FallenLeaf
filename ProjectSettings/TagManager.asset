@@ -8,6 +8,9 @@ TagManager:
   - coin
   - TreeBranch
   - enemy
+  - leaves
+  - left
+  - right
   layers:
   - Default
   - TransparentFX

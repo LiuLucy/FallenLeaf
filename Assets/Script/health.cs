@@ -7,7 +7,6 @@ public class health : MonoBehaviour {
 
     public float CurrentHealth { get; set; }
     public float MaxHealth { get; set; }
-
     public Slider healthbar;
     public Image currentHealthBar;
 
@@ -71,6 +70,10 @@ public class health : MonoBehaviour {
         if (other.gameObject.tag == "TreeBranch")
         {
             DealDamage(10);
+        }
+        if (other.gameObject.tag == "enemy")
+        {
+            DealDamage(40);
         }
     }
 }

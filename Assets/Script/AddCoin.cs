@@ -19,7 +19,6 @@ public class AddCoin : MonoBehaviour {
 		Destroy(coin,5);
 	}
 	 void OnTriggerEnter2D(Collider2D other) {
-		 Debug.Log("123");
         if(other.gameObject.tag == "coin")
 		{
 			score_Count+=1;

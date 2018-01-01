@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class scrollImage : MonoBehaviour {
-	float scrollSpeed = -2f;
+	float scrollSpeed;
 	Vector2 startPos;
 	// Use this for initialization
 	void Start () {
-		startPos = transform.position;
+        scrollSpeed = -2f;
+        startPos = transform.position;
 	}
 	
 	// Update is called once per frame

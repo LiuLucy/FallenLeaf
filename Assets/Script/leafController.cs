@@ -6,16 +6,22 @@ public class leafController : MonoBehaviour {
 	
 	bool leafshake;
 	Vector3 leaf;
-	// Use this for initialization
-	private float leafShakeSpeed = 0.0f;
-	void Start () {
-		leafshake = true;
+    private float speed;
+    // Use this for initialization
+    private float leafShakeSpeed = 0.0f;
+	void Start ()
+    {
+        speed = 5.0f;
+        leafshake = true;
 		leaf = GameObject.Find("leaf").transform.position;
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		if (Input.GetKey(KeyCode.RightArrow))
+	void Update ()
+    {
+        if (transform.position.y > 33)
+            transform.position += Vector3.down * speed * Time.deltaTime;
+        if (Input.GetKey(KeyCode.RightArrow))
 		{
 			gameObject.transform.position += new Vector3(0.1f,0,0);
 			transform.Rotate(0,0,15f); 
