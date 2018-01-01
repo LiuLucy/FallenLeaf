@@ -38,6 +38,14 @@ public class health : MonoBehaviour {
         if (CurrentHealth <= 0)
             Die();
     }
+     void LoveHealth(float LoveValue)
+    {
+        CurrentHealth += LoveValue;
+
+        healthbar.value = CalculateHealth();
+        ChangeColor();
+        
+    }
     
     void ChangeColor()
     {
@@ -74,6 +82,12 @@ public class health : MonoBehaviour {
         if (other.gameObject.tag == "enemy")
         {
             DealDamage(40);
+        }
+        if (other.gameObject.tag == "love")
+        {
+            Debug.Log("love");
+            Destroy(other.gameObject);
+            LoveHealth(7);
         }
     }
 }

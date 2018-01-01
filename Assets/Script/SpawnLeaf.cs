@@ -9,7 +9,7 @@ public class SpawnLeaf : MonoBehaviour {
     public GameObject leaf;
     // Use this for initialization
     void Start () {
-        for (int spawnTimes = 0; spawnTimes < 110; spawnTimes++)
+        for (int spawnTimes = 0; spawnTimes < 40; spawnTimes++)
         {
             SpawnLeaves();
         }

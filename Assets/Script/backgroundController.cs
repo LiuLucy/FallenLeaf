@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class backgroundController : MonoBehaviour {
-	public float speed = 0.5f;
+	public float speed = 0.2f;
 
 	// Use this for initialization
 	void Start () {
