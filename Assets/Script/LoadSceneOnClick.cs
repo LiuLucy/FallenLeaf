@@ -53,11 +53,22 @@ public class LoadSceneOnClick : MonoBehaviour {
         Invoke("ChangeScene", 1.5f);
     }
 
-    private void ChangeScene()
+    public void ChangeScene()
     {
         SceneManager.LoadScene(1);
     }
-
+    public void Home()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void Reload()
+    {
+        Application.LoadLevel(Application.loadedLevel);
+    }
+    public void shop()
+    {
+        SceneManager.LoadScene(2);
+    }
 
 
 }

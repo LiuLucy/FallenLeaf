@@ -11,6 +11,8 @@ TagManager:
   - leaves
   - left
   - right
+  - love
+  - gameOver
   layers:
   - Default
   - TransparentFX

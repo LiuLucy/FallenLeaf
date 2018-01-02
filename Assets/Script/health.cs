@@ -9,14 +9,16 @@ public class health : MonoBehaviour {
     public float MaxHealth { get; set; }
     public Slider healthbar;
     public Image currentHealthBar;
-
+    private GameObject gameoverView;
 
     // Use this for initialization
     void Start () {
-        //初始化 總血量 目前血量 血條
+        //初始化 總血量 目前血量 血條 關閉死亡畫面
         MaxHealth = 100f;
         CurrentHealth = MaxHealth;
         healthbar.value = CalculateHealth();
+        gameoverView = GameObject.FindGameObjectWithTag("gameOver");
+        gameoverView.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -24,7 +26,7 @@ public class health : MonoBehaviour {
         //測試用，點擊x 血量扣1
         if (Input.GetKeyDown(KeyCode.X))
         {
-            DealDamage(1);
+            DealDamage(99);
             Debug.Log("health -1");
         }
 	}
@@ -70,6 +72,8 @@ public class health : MonoBehaviour {
     void Die()
     {
         CurrentHealth = 0;
+        Time.timeScale = 0;
+        gameoverView.SetActive(true);
         Debug.Log("you death");
     }
 

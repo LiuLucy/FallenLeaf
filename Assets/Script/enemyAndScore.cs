@@ -31,8 +31,16 @@ public class enemyAndScore : MonoBehaviour {
     void Update () {
         if (score >= scoreToNextLevel)
             LevelUp();
-        score += difficultyLevel*0.3f ;
-        scoreText.text = ((int)score).ToString();
+        if(Time.deltaTime > 0)
+        { 
+            score += difficultyLevel*0.3f ;
+            scoreText.text = ((int)score).ToString();
+        }
+        if(Time.deltaTime == 0)
+        {
+            scoreText.text = ((int)score).ToString();
+            score += 0;
+        }
 
         if (movingUp)
         {

@@ -5,13 +5,15 @@ using UnityEngine;
 public class SpawnLeaf : MonoBehaviour {
     public Vector3 center;
     public Vector3 size;
-
+    
     public GameObject leaf;
     // Use this for initialization
-    void Start () {
-        for (int spawnTimes = 0; spawnTimes < 40; spawnTimes++)
+    void Start ()
+    {
+        for (int spawnTimes = 0; spawnTimes < 110; spawnTimes++)
         {
-            SpawnLeaves();
+            float ang = spawnTimes * 30;
+            SpawnLeaves(ang,spawnTimes);
         }
             
 	}
@@ -19,13 +21,18 @@ public class SpawnLeaf : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKey(KeyCode.Q))
-            SpawnLeaves();
+            SpawnLeaves(1,1);
 	}
 
-    public void SpawnLeaves()
+    public void SpawnLeaves(float ang,int i)
     {
+        float radius = Random.Range(0,size.y);
+         Vector3 circ;
+        circ.x = center.x + radius * Mathf.Sin(ang * Mathf.Deg2Rad);
+        circ.y = center.y + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
+
         Quaternion spawnRotation = Quaternion.Euler(0, 0, Random.Range(0, 360));
-        Vector3 pos = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), 0);
+        Vector3 pos =  new Vector3(circ.x, circ.y, 0);
         GameObject newLeaf = (GameObject)Instantiate(leaf, pos, spawnRotation);
         newLeaf.GetComponent<SpriteRenderer>().color = Color.HSVToRGB(Random.Range(0.15f, 0.5f), 1, 1);
         newLeaf.transform.parent = transform;

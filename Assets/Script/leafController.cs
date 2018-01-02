@@ -14,6 +14,7 @@ public class leafController : MonoBehaviour {
         speed = 5.0f;
         leafshake = true;
 		leaf = GameObject.Find("leaf").transform.position;
+		Time.timeScale = 1;
 	}
 	
 	// Update is called once per frame
