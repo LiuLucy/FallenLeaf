@@ -32,3 +32,5 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Assets/Image/prefab/leaf.prefab
+Library/metadata/00/00000000000000005100000000000000
