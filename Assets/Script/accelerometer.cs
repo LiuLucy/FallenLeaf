@@ -5,15 +5,18 @@ using UnityEngine;
 public class accelerometer : MonoBehaviour {
 	
 	bool leafshake;
-	Vector3 leaf;
+    Vector3 leaf;
+    private float speed;
 	// Use this for initialization
 	private float leafShakeSpeed = 0.0f;
-	void Start () {
-		leafshake = true;
-		leaf = GameObject.Find("leaf").transform.position;
-		
-		//check if we have an accelerometer
-		if(SystemInfo.supportsAccelerometer)
+	void Start ()
+    {
+        speed = 5.0f;
+        leafshake = true;
+        leaf = GameObject.Find("leaf").transform.position;
+        Time.timeScale = 1;
+        //check if we have an accelerometer
+        if (SystemInfo.supportsAccelerometer)
 		{
 			
 		}
@@ -22,9 +25,9 @@ public class accelerometer : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-		//key input and move gameObject
-		/*
+
+        //key input and move gameObject
+        /*
 		if (Input.GetKey(KeyCode.RightArrow))
 		{
 			gameObject.transform.position += new Vector3(0.1f,0,0);
@@ -36,7 +39,9 @@ public class accelerometer : MonoBehaviour {
 			transform.Rotate(0,0,-15f); 
 		}
 		*/
-		AccelerometerMove();
+        if (transform.position.y > 33)
+            transform.position += Vector3.down * speed * Time.deltaTime;
+        AccelerometerMove();
 		
 		if(transform.localRotation.z > 0.4f)
 		{
@@ -59,11 +64,11 @@ public class accelerometer : MonoBehaviour {
 	
 	void AccelerometerMove(){	
 		float x = Input.acceleration.x;
-		if(x<-0.1f)
+		if(x<-0.05f)
 		{
 			MoveLeft();
 		}
-		else if(x>0.1f)
+		else if(x>0.05f)
 		{
 			MoveRight();
 		}
