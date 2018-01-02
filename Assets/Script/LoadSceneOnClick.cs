@@ -21,7 +21,6 @@ public class LoadSceneOnClick : MonoBehaviour {
         
         if (buttonClicked)
         {
-            Debug.Log(leaf.transform.position.y);
             if (leaf.transform.position.y > -6f)
                 leaf.transform.position += Vector3.down * 4.0f * Time.deltaTime;
         }

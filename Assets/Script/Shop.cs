@@ -18,6 +18,11 @@ public class Shop : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+	}
+	public void selectRight()
+	{
+		Debug.Log("Right: "+leafI.Length);
+		skin_int = skin_int+1;
 		if(skin_int == leafI.Length)
 		{
 			skin_int = 0;
@@ -30,20 +35,27 @@ public class Shop : MonoBehaviour {
 			leaf_img.sprite = leaf_Skin[skin_int];
 		}
 		
-	}
-	public void selectRight()
-	{
-		skin_int = skin_int+1;
 		leaf_img.sprite = leaf_Skin[skin_int];
 		leafS.gameObject.GetComponent<SpriteRenderer>().sprite = leaf_Skin[skin_int];
-		Debug.Log(skin_int);
+	
 	}
 	public void selectLeft()
 	{
+		Debug.Log("Left: "+leafI.Length);
 		skin_int = skin_int-1;
+		if(skin_int == leafI.Length)
+		{
+			skin_int = 0;
+			leaf_img.sprite = leaf_Skin[skin_int];
+			
+		}
+		if(skin_int < 0)
+		{
+			skin_int = leafI.Length - 1;
+			leaf_img.sprite = leaf_Skin[skin_int];
+		}
 		leaf_img.sprite = leaf_Skin[skin_int];
 		leafS.gameObject.GetComponent<SpriteRenderer>().sprite = leaf_Skin[skin_int];
-		Debug.Log(skin_int);
 	}
 	public void Home()
     {
