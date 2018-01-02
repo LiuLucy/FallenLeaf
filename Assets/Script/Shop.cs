@@ -5,25 +5,28 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Shop : MonoBehaviour {
-	public  GameObject leafS;
+	private  GameObject leafS;
 	private Sprite leaftSkin;
 	public Sprite[] leaf_Skin;
 	private string[] leafI;
 	public SpriteRenderer leaf_img;
 	private int skin_int = 0;
- 	// Use this for initialization
-	void Start () {
-		leaftSkin = leafS.gameObject.GetComponent<SpriteRenderer>().sprite;		
+    // Use this for initialization
+    void Start () {
+        leafS = (GameObject)Resources.Load("leaf", typeof(GameObject));
+        //leafS = GameObject.FindGameObjectWithTag("leaf");
+        leaftSkin = leafS.GetComponent<SpriteRenderer>().sprite;
+
+        Debug.Log(leaf_Skin.Length);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	}
-	public void selectRight()
+	public void SelectRight()
 	{
-		Debug.Log("Right: "+leafI.Length);
 		skin_int = skin_int+1;
-		if(skin_int == leafI.Length)
+		if(skin_int == leaf_Skin.Length)
 		{
 			skin_int = 0;
 			leaf_img.sprite = leaf_Skin[skin_int];
@@ -36,14 +39,13 @@ public class Shop : MonoBehaviour {
 		}
 		
 		leaf_img.sprite = leaf_Skin[skin_int];
-		leafS.gameObject.GetComponent<SpriteRenderer>().sprite = leaf_Skin[skin_int];
+        leafS.GetComponent<SpriteRenderer>().sprite = leaf_Skin[skin_int];
 	
 	}
-	public void selectLeft()
+	public void SelectLeft()
 	{
-		Debug.Log("Left: "+leafI.Length);
 		skin_int = skin_int-1;
-		if(skin_int == leafI.Length)
+		if(skin_int == leaf_Skin.Length)
 		{
 			skin_int = 0;
 			leaf_img.sprite = leaf_Skin[skin_int];
@@ -51,11 +53,11 @@ public class Shop : MonoBehaviour {
 		}
 		if(skin_int < 0)
 		{
-			skin_int = leafI.Length - 1;
+			skin_int = leaf_Skin.Length - 1;
 			leaf_img.sprite = leaf_Skin[skin_int];
 		}
 		leaf_img.sprite = leaf_Skin[skin_int];
-		leafS.gameObject.GetComponent<SpriteRenderer>().sprite = leaf_Skin[skin_int];
+        leafS.GetComponent<SpriteRenderer>().sprite = leaf_Skin[skin_int];
 	}
 	public void Home()
     {
